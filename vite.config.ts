@@ -2,10 +2,13 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import viteCompression from 'vite-plugin-compression'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 //@ts-ignore
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './build', //打包路径
+  base: './', //打包路径
   plugins: [
     vue(),
     // gzip压缩 生产环境生成 .gz 文件
@@ -15,6 +18,13 @@ export default defineConfig({
       threshold: 10240,
       algorithm: 'gzip',
       ext: '.gz',
+    }),
+    //自动导入Element
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
     }),
   ],
   //启动服务配置

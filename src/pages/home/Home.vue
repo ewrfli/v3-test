@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import HelloWorld from '../home/Home.vue'
 import { useMainStore } from "@/store/mian"
+import { ElButton } from 'element-plus'
+const count = ref(0)
 const mainStore = useMainStore()
 const updateName = ()=>{
   // $patch 修改 store 中的数据
@@ -12,17 +15,19 @@ console.log(import.meta.env.VITE_APP_WEB_URL)
 </script>
 
 <template>
-    <div>hoem-page</div>
+    <div class="test">hoem-page</div>
     <router-link to="/login">Go to login</router-link>
     <div>
-        <button>get</button>
+        <el-button>get</el-button> <el-button @click="count++">{{ count }}</el-button>
     </div>
     <div>用户名:{{ mainStore.name }}<br />长度:{{ mainStore.nameLength }}</div>
   <hr/>
-  <button @click="updateName">修改store中的name</button>
+  <el-button type="primary" @click="updateName">修改store中的name</el-button>
     <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
 </template>
 
-<style>
-
+<style lang="scss">
+.test {
+  color: $test-color;
+}
 </style>
