@@ -7,11 +7,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^0.24.0",
+    "nprogress": "^0.2.0",
     "vue": "^3.2.25",
     "vue-router": "4"
   },
   "devDependencies": {
     "@types/node": "^17.0.8",
+    "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-vue": "^2.0.0",
     "dart-sass": "^1.25.0",
     "sass": "^1.48.0",

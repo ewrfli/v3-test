@@ -4,6 +4,7 @@ import HelloWorld from '../home/Home.vue'
 
 <template>
     <div>hoem-page</div>
+    <router-link to="/login">Go to login</router-link>
     <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
 </template>
 
