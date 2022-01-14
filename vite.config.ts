@@ -6,6 +6,21 @@ import path from 'path'
 export default defineConfig({
   base: './', //打包路径
   plugins: [vue()],
+  server: {
+    host: '0.0.0.0',
+    port: 3001,
+    open: true,
+    https: false,
+    proxy: {}
+  },
+  build:{
+    terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true
+        }
+    }
+  },
   // 配置别名
   resolve: {
     alias: {
