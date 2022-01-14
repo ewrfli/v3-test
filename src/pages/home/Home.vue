@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import HelloWorld from '../home/Home.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
 import { useMainStore } from "@/store/mian"
 import { ElButton } from 'element-plus'
 const count = ref(0)
@@ -23,7 +23,7 @@ console.log(import.meta.env.VITE_APP_WEB_URL)
     <div>用户名:{{ mainStore.name }}<br />长度:{{ mainStore.nameLength }}</div>
   <hr/>
   <el-button type="primary" @click="updateName">修改store中的name</el-button>
-    <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
+    <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
 
 <style lang="scss">
